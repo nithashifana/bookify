@@ -24,12 +24,10 @@ module.exports.registerUser = async (req, res) => {
       return res.status(400).json({ message: "User already exists with this email." });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-
     const newUser = new User({
       name,
       email,
-      password: hashedPassword,
+      password,
       membershipType,
       registeredDate: Date.now(),
     });
@@ -40,7 +38,7 @@ module.exports.registerUser = async (req, res) => {
     res.status(201).json({ message: "Account created successfully.", token });
   } catch (error) {
     console.error("Error registering user:", error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: "Internal Server Error", error });
   }
 };
 
