@@ -70,7 +70,7 @@ module.exports.loginUser = async (req, res) => {
 
 module.exports.getUser = async (req, res) => {
   try {
-    const userId = req.user.id; 
+    const userId = req.user._id; 
     const user = await User.findById(userId).select("-password");
 
     if (!user) {
@@ -88,7 +88,7 @@ module.exports.updateUser = async (req, res) => {
   const { name, membershipType } = req.body;
 
   try {
-    const userId = req.user.id;
+    const userId = req.user._id;
     const user = await User.findById(userId);
 
     if (!user) {
@@ -109,7 +109,7 @@ module.exports.updateUser = async (req, res) => {
 
 module.exports.deleteUser = async (req, res) => {
   try {
-    const userId = req.user.id; 
+    const userId = req.user._id; 
     const user = await User.findByIdAndDelete(userId);
 
     if (!user) {

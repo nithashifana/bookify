@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema(
             default: 'Regular',
         },
         registeredDate: { type: Date, default: Date.now },
+        isAdmin: {
+            type: Boolean,
+            default: false,
+            required: true,
+          },
     },
     { timestamps: true }
 );
@@ -33,4 +38,4 @@ userSchema.methods.isPasswordValid = async function (inputPassword) {
     return await bcrypt.compare(inputPassword, this.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Users', userSchema);
