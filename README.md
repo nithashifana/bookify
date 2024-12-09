@@ -80,4 +80,5 @@ The backend server is hosted on Render. You can access it at:
 
 ## License
 This project is licensed under the MIT License.
+[MIT License](LICENSE)
 
