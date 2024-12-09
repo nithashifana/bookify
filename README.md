@@ -46,18 +46,18 @@ Bookify helps you manage your library with ease. Whether you are an admin or a u
 - **User Registration**:
   - Create a new user:
     ```bash
-    curl -X POST https://bookify-sx05.onrender.com/api/auth/register -H "Content-Type: application/json" -d '{ "name": "John", "email": "test@examp.com", "password": "YOUR_PASSWORD_HERE", "membershipType": "Regular" }'
+    curl -X POST https://bookify-sx05.onrender.com/api/auth/register -H "Content-Type: application/json" -d '{ "name": "<name>", "email": "<email>", "password": "<password>", "membershipType": "<regular/premium>" }'
     ```
 - **User Login**:
   - Login and receive JWT:
     ```bash
-    curl -X POST https://bookify-sx05.onrender.com/api/auth/login -H "Content-Type: application/json" -d '{"email":"test@examp.com", "password": "YOUR_PASSWORD_HERE"}'
+    curl -X POST https://bookify-sx05.onrender.com/api/auth/login -H "Content-Type: application/json" -d '{"email":"test@exa.com", "password": "YOUR_PASSWORD_HERE"}'
     ```
 - **Add a new book**:
   - Add a new book to the library:
     ```bash
-    curl -X POST https://bookify-sx05.onrender.com/api/books/add -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTVkNGExMDZmMDEyM2ZmNGY3MzVkOSIsImlhdCI6MTczMzY3ODI1MCwiZXhwIjoxNzMzNjgxODUwfQ.YzE2bOjWrWyta20Fxv4dFpZTnuvrBVrPPluWfby1E9Y"
-    -d '{"title": "ABC", "author": "abcd", "publishedYear": 1908, "genre": "Mystry", "availableCopies": 5}'
+    curl -X POST https://bookify-sx05.onrender.com/api/books/add -H "Content-Type: application/json" -H "Authorization: Bearer <token>"
+    -d '{"title": "<title>", "author": "<author>", "publishedYear": <year>, "genre": "<genre>", "availableCopies": <number>}'
     ```
   
 
